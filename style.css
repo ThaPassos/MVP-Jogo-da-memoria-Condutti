@@ -294,29 +294,29 @@ body.bodyGame {
   align-items: center;
 }
 
-.back-btn{
+.back-btn {
   background: #0b5e44;
-  border: none;
   color: white;
-  margin-top: 30px;
 
-  font-size: clamp(18px, 3vw, 26px);
-  padding: 18px 50px;
+  margin: 30px auto 50px; /* centraliza + espaço embaixo */
+
+  font-size: clamp(16px, 3vw, 22px);
+  padding: 14px 40px;
 
   border-radius: 50px;
   cursor: pointer;
 
   display: flex;
-  align-items: end;
+  align-items: center;
   justify-content: center;
 
-  gap: 10px;
-
-  transition: 0.2s ease;
   text-decoration: none;
+
   box-shadow: 
     0 8px 0 #032001,  
     0 10px 20px rgba(0,0,0,0.25); 
+
+  transition: 0.2s ease;
 }
 
 @media (max-width: 1024px) {

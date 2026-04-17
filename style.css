@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #043d2c;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+
+  gap: 20px; 
+
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+}
+
+/* Logo */
+.logo {
+  width: clamp(120px, 20vw, 220px);
+}
+
+/* Linha */
+.divider {
+  width: 80%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.159); 
+  margin-bottom: 60px;
+  margin-top: 20px;
+}
+
+/* Título */
+h1 {
+  font-size: clamp(24px, 5vw, 48px);
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: clamp(16px, 2.5vw, 22px);
+  margin-bottom: 10px;
+}
+
+/* Botão */
+.play-btn {
+  background: #0b5e44;
+  border: none;
+  color: white;
+  margin-top: 30px;
+
+  font-size: clamp(18px, 3vw, 26px);
+  padding: 18px 50px;
+
+  border-radius: 50px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  transition: 0.2s ease;
+  text-decoration: none;
+  box-shadow: 
+    0 8px 0 #032001,  
+    0 10px 20px rgba(0,0,0,0.25); 
+}
+
+.play-btn:hover {
+  background: #0f7a59;
+  transform: scale(1.05);
+}
+
+.play-btn:active {
+  transform: translateY(4px);
+
+  box-shadow: 
+    0 4px 0 #032001,
+    0 6px 12px rgba(0,0,0,0.25);
+}
+
+/* QR */
+.qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 50px;
+}
+
+.qr-container img {
+  width: 140px;
+}
+
+.qr-container p {
+  font-size: clamp(14px, 2vw, 18px);
+}
+
+.card {
+  width: 210px;
+  height: 280px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card.flip .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 150px;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background: #0b5e44; /* verso */
+}
+
+.card-back {
+  background: white;
+  transform: rotateY(180deg);
+}
+
+.game {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+
+  width: 100%;
+  max-width: 1100px;
+  margin: 50px auto 0;
+
+  padding: 0 40px 100px;
+}
+
+.card-front img,
+.card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  border-radius: 30px;
+}
+
+.bodyGame{
+  justify-items: center; 
+  align-items: center;
+}
+
+.titleGame{
+  color: #f5f2f2;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  color: white;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* FUNDO ESCURO */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.6); /* opacidade */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+}
+
+/* ESCONDER */
+.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #109547;
+  padding: 40px;
+  border-radius: 20px;
+  color: white;
+  width: 700px;
+  height: 500px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* BLOCO DO TEXTO */
+.modal-body {
+  flex: 1; /* ocupa todo espaço disponível */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centraliza vertical */
+  align-items: center; /* centraliza horizontal */
+  text-align: center;
+}
+
+/* BOTÃO */
+.modal-btn {
+  align-self: center; /* centraliza botão */
+  margin-bottom: 10px;
+}
+
+/* PARABÉNS */
+.modal-title {
+  font-size: 60px;
+  font-weight: bold;
+
+  text-shadow: 0 4px 8px rgba(0,0,0,0.4); 
+}
+
+/* TEXTO */
+.modal-text {
+  margin: 10px 0 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+/* INFO */
+.modal-info {
+  font-size: 23px;
+  margin: 5px 0;
+}
+
+/* BOTÃO */
+.modal-btn {
+  margin-top: auto; /* força ficar embaixo */
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  width: 200px;
+  background: #064e3b;
+  color: white;
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 0 #022c22,
+    0 8px 15px rgba(0,0,0,0.3);
+
+  transition: 0.2s;
+}
+
+footer{
+  height: 100px;
+}
+
+
+.modal-btn:active {
+  transform: translateY(3px);
+
+  box-shadow:
+    0 3px 0 #022c22,
+    0 5px 10px rgba(0,0,0,0.3);
+}
+
+body.bodyGame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .game {
+    gap: 30px;
+    padding: 0 30px 80px;
+  }
+
+  .titleGame{
+    font-size: 80px;
+  }
+
+  .info{
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .game {
+    gap: 20px;
+    padding: 0 20px 60px;
+  }
+
+  .card {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-inner {
+    aspect-ratio: 3 / 4; 
+  }
+
+  .info{
+    font-size: 60px;
+  }
+}

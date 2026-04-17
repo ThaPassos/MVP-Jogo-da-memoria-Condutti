@@ -360,3 +360,10 @@ body.bodyGame {
     font-size: 60px;
   }
 }
+
+.back-container {
+  grid-column: 1 / -1; /* ocupa todas as colunas */
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

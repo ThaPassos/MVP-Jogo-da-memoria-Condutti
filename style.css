@@ -319,6 +319,13 @@ body.bodyGame {
   transition: 0.2s ease;
 }
 
+.back-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
 @media (max-width: 1024px) {
   .game {
     gap: 30px;
